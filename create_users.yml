@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: Create User
+     user:
+       name: kopp
+       password: "{{ 'admin' | password_hash('sha512') }}"
+       groups: diegosoda
+       shell: /bin/bash

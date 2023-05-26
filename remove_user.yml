@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: Remove User
+     user:
+       name: kopp
+       state: absent
+       remove: yes
+       force: yes
+     
